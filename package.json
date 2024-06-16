@@ -1,0 +1,15 @@
+{
+  "name": "@exercism/highlightjs-arturo",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/arturo.ts --outfile dist/arturo.js",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
