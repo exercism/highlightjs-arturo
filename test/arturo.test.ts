@@ -6,11 +6,19 @@ import hljsDefineArturo from "../src/arturo";
 
 hljs.registerLanguage("arturo", hljsDefineArturo);
 
-const markupFilePaths = new Glob("test/markup/*.txt").scan(".");
-const toExpectedPath = (path: Path.ParsedPath) =>
-  Path.format({ ...path, base: "", ext: ".expected" });
+test("detect", async () => {
+  const code = await Bun.file(
+    Path.join(__dirname, "detect", "default.txt")
+  ).text();
+  const actual = hljs.highlightAuto(code).language;
+  expect(actual).toBe("arturo");
+});
 
 describe("markup", async () => {
+  const markupFilePaths = new Glob("test/markup/*.txt").scan(".");
+  const toExpectedPath = (path: Path.ParsedPath) =>
+    Path.format({ ...path, base: "", ext: ".expected" });
+
   for await (const filePath of markupFilePaths) {
     const path = Path.parse(filePath);
 
