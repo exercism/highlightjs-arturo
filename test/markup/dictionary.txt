@@ -1,0 +1,6 @@
+#[
+    name: "John"
+    surname: "Doe"
+    age: 34
+    likes: [pizza spaghetti]
+]
