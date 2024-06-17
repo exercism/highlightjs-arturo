@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "bun build src/arturo.ts --outfile dist/arturo.js",
-    "test": "bun test"
+    "test": "bun test",
+    "dev": "vite"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "vite": "^5.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.4.5"

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arturo playground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <pre><code class="language-arturo">
+a1: 2
+a2: 3.14
+a3: to :complex [1 2.0]     ; 1.0+2.0i
+
+; strings
+c1: "this is a string"
+c2: {
+    this is a multiline string
+    that is indentation-agnostic
+}
+c3: {:
+    this is 
+        a verbatim
+            multiline string
+                which will remain exactly
+                    as the original
+:}
+
+; characters
+ch: `c`
+
+; blocks/arrays
+d: [1 2 3]
+
+; dictionaries
+e: #[
+    name: "John"
+    surname: "Doe"
+    age: 34
+    likes: [pizza spaghetti]
+]
+
+; yes, functions are values too
+f: function [x][
+    2 * x
+]
+
+    </code></pre>
+    <script type="module">
+        import hljsDefineArturo from "./src/arturo.ts"
+        hljs.registerLanguage("arturo", hljsDefineArturo);
+        hljs.highlightAll();
+    </script>
+  </body>
+</html>
