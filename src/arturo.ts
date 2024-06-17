@@ -13,6 +13,10 @@ export default function (hljs: HLJSApi): Language {
   return {
     name: "Wren",
     keywords: {},
-    contains: [hljs.QUOTE_STRING_MODE, hljs.COMMENT(";", "\n")],
+    contains: [
+      hljs.QUOTE_STRING_MODE,
+      hljs.C_NUMBER_MODE,
+      hljs.COMMENT(";", "\n"),
+    ],
   };
 }
