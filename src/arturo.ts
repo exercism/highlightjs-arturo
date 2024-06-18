@@ -495,7 +495,7 @@ export default function (hljs: HLJSApi): Language {
     match: hljs.regex.either(...OPERATORS),
   };
 
-  const IDENTIFIER = "[a-zA-Z_][\\w?]*";
+  const IDENTIFIER = "[a-zA-Z_][a-zA-Z0-9_]*\\w?";
 
   const REGEX = {
     className: "regexp",
