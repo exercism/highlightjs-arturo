@@ -530,6 +530,16 @@ export default function (hljs: HLJSApi): Language {
     ],
   };
 
+  const COMMENT = hljs.COMMENT(";", "\n");
+
+  const NUMBER = hljs.C_NUMBER_MODE;
+
+  const SYMBOL = {
+    className: "symbol",
+    begin: "'",
+    end: "\\W",
+  };
+
   return {
     name: "Wren",
     keywords: {
@@ -537,14 +547,6 @@ export default function (hljs: HLJSApi): Language {
       keyword: BUILT_IN_KEYWORDS,
       literal: LITERAL_KEYWORDS,
     },
-    contains: [
-      hljs.C_NUMBER_MODE,
-      hljs.COMMENT(";", "\n"),
-      STRING,
-      REGEX,
-
-      TYPE,
-      OPERATOR,
-    ],
+    contains: [NUMBER, COMMENT, STRING, REGEX, TYPE, OPERATOR, SYMBOL],
   };
 }

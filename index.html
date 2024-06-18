@@ -151,7 +151,7 @@
       ; LOOPS
       ;---------------------------------
       
-      ; with `loop`
+      ; with loop
       arr: [1 4 5 3]
       loop arr 'x [
           print ["x =" x]
@@ -173,9 +173,9 @@
       ; using ranges
       loop 1..3 'x ->         ; since it's a single statement
           print x             ; there's no need for [block] notation
-                              ; we can wrap it up using the `->` syntactic sugar
+                              ; we can wrap it up using the -> syntactic sugar
       
-      loop `a`..`c` 'ch ->
+      loop 'a'..'c' 'ch ->
           print ch
       ; a
       ; b
