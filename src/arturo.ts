@@ -538,8 +538,13 @@ export default function (hljs: HLJSApi): Language {
     match: "#([a-fA-F0-9]{6}|\\w+)",
   };
 
+  const VERSION = {
+    className: "number",
+    match: /[0-9]\.[0-9]\.[0-9]([\w-+]+)?/,
+  };
+
   const NUMBER = {
-    variants: [hljs.C_NUMBER_MODE, COLOR],
+    variants: [VERSION, COLOR, hljs.C_NUMBER_MODE],
   };
 
   const SYMBOL = {
