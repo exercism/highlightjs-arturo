@@ -422,7 +422,7 @@ export default function (hljs: HLJSApi): Language {
     "#####",
     "######",
     "%",
-    "^",
+    "\\^",
     "∅",
     "∈",
     "∉",
@@ -486,13 +486,12 @@ export default function (hljs: HLJSApi): Language {
     "⊇",
     "⊻",
     "⊼",
-    "$",
+    "\\$",
   ];
 
   const OPERATOR = {
     className: "operator",
     match: hljs.regex.either(...OPERATORS),
-    relevance: 0,
   };
 
   const IDENTIFIER = "[a-zA-Z_][a-zA-Z0-9_]*\\w?";
