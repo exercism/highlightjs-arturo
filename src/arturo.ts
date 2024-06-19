@@ -403,7 +403,6 @@ export default function (hljs: HLJSApi): Language {
     "!!",
     "!",
     "\\?\\?",
-    "\\?",
     "\\.\\.\\.",
     "\\.\\.",
     "\\./",
@@ -493,6 +492,7 @@ export default function (hljs: HLJSApi): Language {
   const OPERATOR = {
     className: "operator",
     match: hljs.regex.either(...OPERATORS),
+    relevance: 0,
   };
 
   const IDENTIFIER = "[a-zA-Z_][a-zA-Z0-9_]*\\w?";
@@ -515,6 +515,7 @@ export default function (hljs: HLJSApi): Language {
     begin: "{",
     end: "}",
   };
+
   const VERBATIM_MULTILINE_STRING = {
     className: "string",
     begin: "{:",
@@ -532,7 +533,14 @@ export default function (hljs: HLJSApi): Language {
 
   const COMMENT = hljs.COMMENT(";", "\n");
 
-  const NUMBER = hljs.C_NUMBER_MODE;
+  const COLOR = {
+    className: "number",
+    match: "#([a-fA-F0-9]{6}|\\w+)",
+  };
+
+  const NUMBER = {
+    variants: [hljs.C_NUMBER_MODE, COLOR],
+  };
 
   const SYMBOL = {
     className: "symbol",
