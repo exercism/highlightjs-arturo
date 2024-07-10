@@ -1,15 +1,25 @@
-# highlightjs-arturo
+# Highlightjs support for the Arturo language
 
-To install dependencies:
+## Install dependencies
 
 ```bash
 bun install
 ```
 
-To run:
+## Run the tests
 
 ```bash
-bun run index.ts
+bun run test
 ```
 
-This project was created using `bun init` in bun v1.1.12. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## Open development server
+
+```bash
+bun run dev
+```
+
+## Production build
+
+```bash
+bun run build
+```
