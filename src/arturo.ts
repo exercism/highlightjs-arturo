@@ -494,7 +494,7 @@ export default function (hljs: HLJSApi): Language {
     match: hljs.regex.either(...OPERATORS),
   };
 
-  const IDENTIFIER = "[a-zA-Z_][a-zA-Z0-9_]*\\w?";
+  const IDENTIFIER_RE = "[a-zA-Z_][a-zA-Z0-9_]*\\w?";
 
   const REGEX = {
     className: "regexp",
@@ -524,7 +524,6 @@ export default function (hljs: HLJSApi): Language {
   const STRING = {
     variants: [
       hljs.QUOTE_STRING_MODE,
-      hljs.APOS_STRING_MODE,
       VERBATIM_MULTILINE_STRING,
       MULTILINE_STRING,
     ],
@@ -548,17 +547,16 @@ export default function (hljs: HLJSApi): Language {
 
   const SYMBOL = {
     className: "symbol",
-    begin: "'",
-    end: "\\W",
+    match: regex.concat("'", IDENTIFIER_RE),
   };
 
   return {
-    name: "Wren",
+    name: "Arturo",
     keywords: {
-      $pattern: IDENTIFIER,
+      $pattern: IDENTIFIER_RE,
       keyword: BUILT_IN_KEYWORDS,
       literal: LITERAL_KEYWORDS,
     },
-    contains: [NUMBER, COMMENT, STRING, REGEX, TYPE, OPERATOR, SYMBOL],
+    contains: [NUMBER, COMMENT, OPERATOR, STRING, REGEX, TYPE, SYMBOL],
   };
 }
