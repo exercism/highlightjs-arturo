@@ -1,12 +1,13 @@
 {
   "name": "@exercism/highlightjs-arturo",
-  "module": "index.ts",
+  "main": "src/arturo.js",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "build": "bun build src/arturo.ts --minify --outfile dist/arturo.js",
+    "build": "bun build src/arturo.ts --minify --outfile src/arturo.js",
     "test": "bun test",
-    "dev": "vite"
+    "dev": "vite",
+    "publish": "bun test && bun run build && npm publish --access public"
   },
   "devDependencies": {
     "@types/bun": "latest",
