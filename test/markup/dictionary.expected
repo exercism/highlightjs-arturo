@@ -1,36 +1,6 @@
-a1: 2
-a2: 3.14
-a3: to :complex [1 2.0]     ; 1.0+2.0i
-
-; strings
-c1: "this is a string"
-c2: {
-    this is a multiline string
-    that is indentation-agnostic
-}
-c3: {:
-    this is 
-        a verbatim
-            multiline string
-                which will remain exactly
-                    as the original
-:}
-
-; characters
-ch: `c`
-
-; blocks/arrays
-d: [1 2 3]
-
-; dictionaries
-e: #[
-    name: "John"
-    surname: "Doe"
-    age: 34
-    likes: [pizza spaghetti]
-]
-
-; yes, functions are values too
-f: function [x][
-    2 * x
+<span class="hljs-operator">#</span>[
+    name<span class="hljs-operator">:</span> <span class="hljs-string">&quot;John&quot;</span>
+    surname<span class="hljs-operator">:</span> <span class="hljs-string">&quot;Doe&quot;</span>
+    age<span class="hljs-operator">:</span> <span class="hljs-number">34</span>
+    likes<span class="hljs-operator">:</span> [pizza spaghetti]
 ]
